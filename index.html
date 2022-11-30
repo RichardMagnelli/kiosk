@@ -10,20 +10,29 @@
 
 <body>
   <ul>
-    <div class="category">Cathedral of Learning</div>
-      <li><button class="appearer" id="1" onclick="click1()">Croghan-Schenley Ballroom</button></li>
-      <li><button class="appearer" id="2" onclick="click2()">Early American Room</button></li>
-    </ul>
-  <br>
-  <br>
-    <ul>
-      <div class="category">Other Campus Locations</div>
-      <li><button class="appearer" id="3">Alumni Hall</button></li>
-      <li><button class="appearer" id="4">Bruce Hall - Room 201</button></li>
-      <li><button class="appearer" id="5">William Pitt Union - Tansky Family Lounge</button></li>
-    </ul>
+  <li><a href="menu.html">Step into the darkside</a></li>
+  <li style="float:left"><p>Touchscreen Interface Design Toolkit</li>
+</ul>
 
-  <div class="info" id="myDIV"></div>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <img src="img1.png" style="width:100%">
+    <div class="text">Does a spirit dwell within the Early American Room?</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="img2.png" style="width:100%">
+    <div class="text">Pitt at Night...</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="img3.png" style="width:100%">
+    <div class="text">Does a Russian Ballerina come to the aid of tardy students?</div>
+  </div>
 
   <!--Check this W3 for documentation. https://www.w3schools.com/howto/howto_js_slideshow.asp-->
 
@@ -46,26 +55,17 @@
 let slideIndex = 0;
 showSlides();
 
-function click1(){
-  var x = document.getElementById("myDIV");
-  x.innerHTML = "It was very scary!";
-}
-
-function click2(){
-  var x = document.getElementById("myDIV");
-  x.innerHTML = "It was so spooky!";
-}
-
-/*
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.innerHTML === "Hello") {
-    x.innerHTML = "Swapped text!";
-  } else {
-    x.innerHTML = "Hello";
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 8000); // Change image every 8 seconds
 }
-*/
 
 </script>
 
